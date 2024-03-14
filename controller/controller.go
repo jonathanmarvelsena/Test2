@@ -191,7 +191,7 @@ func EnterRoom(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, err = db.Exec("INSERT INTO participants (id_room, id_account) VALUES (?, ?)", roomID, accountID)
+	_, err = db.Exec("INSERT INTO participants (id_room, id_accnt) VALUES (?, ?)", roomID, accountID)
 	if err != nil {
 		log.Println(err)
 		SendErrorResponse(w, 404, "Internal Server Error")
