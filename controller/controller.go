@@ -33,7 +33,7 @@ func GetAllRooms(w http.ResponseWriter, r *http.Request) {
 	rows, err := db.Query(query, gameID)
 	if err != nil {
 		log.Println(err)
-		SendErrorResponse(w, 500, "Internal Server Error")
+		SendErrorResponse(w, 404, "Internal Server Error")
 		return
 	}
 	defer rows.Close()
@@ -45,7 +45,7 @@ func GetAllRooms(w http.ResponseWriter, r *http.Request) {
 		err := rows.Scan(&room.ID, &room.Room_name)
 		if err != nil {
 			log.Println(err)
-			SendErrorResponse(w, 500, "Internal Server Error")
+			SendErrorResponse(w, 404, "Internal Server Error")
 			return
 		}
 
