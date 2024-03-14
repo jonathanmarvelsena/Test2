@@ -61,7 +61,7 @@ func GetAllRooms(w http.ResponseWriter, r *http.Request) {
 	jsonResponse, err := json.Marshal(response)
 	if err != nil {
 		log.Println(err)
-		SendErrorResponse(w, 500, "Internal Server Error")
+		SendErrorResponse(w, 404, "Internal Server Error")
 		return
 	}
 
@@ -194,7 +194,7 @@ func EnterRoom(w http.ResponseWriter, r *http.Request) {
 	_, err = db.Exec("INSERT INTO participants (id_room, id_account) VALUES (?, ?)", roomID, accountID)
 	if err != nil {
 		log.Println(err)
-		SendErrorResponse(w, 500, "Internal Server Error")
+		SendErrorResponse(w, 404, "Internal Server Error")
 		return
 	}
 
