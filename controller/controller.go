@@ -1,7 +1,7 @@
 package controller
 
 import (
-	m "UTS/model"
+	m "Test2/model"
 	"database/sql"
 	"encoding/json"
 	"log"

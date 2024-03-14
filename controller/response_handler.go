@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	m "UTS/model"
+	m "Test2/model"
 )
 
 func SendErrorResponse(w http.ResponseWriter, kode int, message string) {
