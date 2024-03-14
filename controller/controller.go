@@ -187,7 +187,7 @@ func EnterRoom(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if participantCount >= room.ID_game.Max_player {
-		SendErrorResponse(w, 400, "Room is at its maximum limi")
+		SendErrorResponse(w, 400, "Room is at its maximum limit")
 		return
 	}
 
